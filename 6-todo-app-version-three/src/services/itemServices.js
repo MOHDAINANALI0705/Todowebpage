@@ -1,5 +1,5 @@
 export const addItemToServer = async(task,date) =>{
-    const response = await fetch("https://todowebpage-nav9.vercel.app//api/todo",{
+    const response = await fetch("https://todowebpage-nav9.vercel.app/api/todo",{
         method: "POST",
         headers:{
             "Content-Type":"application/json",
@@ -11,7 +11,7 @@ export const addItemToServer = async(task,date) =>{
 }
 
 export const getItems = async() =>{
-    const response = await fetch("https://todowebpage-nav9.vercel.app//api/todo",{
+    const response = await fetch("https://todowebpage-nav9.vercel.app/api/todo",{
         method: "GET",
     })
     const items =  await response.json()
@@ -19,7 +19,7 @@ export const getItems = async() =>{
 }
 
 export const markCompleted = async() =>{
-    const response = await fetch(`https://todowebpage-nav9.vercel.app//${id}/completed`,{
+    const response = await fetch(`https://todowebpage-nav9.vercel.app/${id}/completed`,{
         method: "PUT",
     })
     const item =  await response.json()
@@ -27,7 +27,7 @@ export const markCompleted = async() =>{
 }
 
 export const deleteItem = async (id) =>{
-     await fetch(`https://todowebpage-nav9.vercel.app//${id}`,{
+     await fetch(`https://todowebpage-nav9.vercel.app/${id}`,{
         method: "DELETE",
     })
     return id;
